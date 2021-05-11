@@ -35,15 +35,19 @@ codeunit 50113 "Student Management"
         TempCSVBuffer.SaveData('C:\temp\Students.csv', ',');
     end;
 
-    procedure GetStudent(var num: Code[10]) ReturnValue: Text
+    procedure GetStudent(var num: Code[10]) ReturnValue: JsonObject
     var
         Student: Record "Student Header";
     begin
         if Student.GET(num) then begin
-            Student.WriteTo(ReturnValue);
+            ReturnValue.Add('Firstname', Student.Firstname);
+            ReturnValue.Add('Lastname', Student.Lastname);
+            ReturnValue.Add('Birthdate', Format(Student.Birthdate));
+            ReturnValue.Add('Education', Format(Student.Education));
+            ReturnValue.Add('StudentNumber', Student."Student Number");
+            ReturnValue.Add('PhoneNumber', Student."Phone Number");
+            ReturnValue.Add('Average Grade', Format(Student."Average Grade"));
             exit(ReturnValue);
-        end else begin
-            exit('404');
         end;
     end;
 }
