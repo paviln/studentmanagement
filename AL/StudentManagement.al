@@ -34,4 +34,16 @@ codeunit 50113 "Student Management"
 
         TempCSVBuffer.SaveData('C:\temp\Students.csv', ',');
     end;
+
+    procedure GetStudent(var num: Code[10]) ReturnValue: Text
+    var
+        Student: Record "Student Header";
+    begin
+        if Student.GET(num) then begin
+            Student.WriteTo(ReturnValue);
+            exit(ReturnValue);
+        end else begin
+            exit('404');
+        end;
+    end;
 }
