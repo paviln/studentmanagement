@@ -2,6 +2,7 @@ page 50103 "Student Document"
 {
     PageType = Document;
     SourceTable = "Student Header";
+    RefreshOnActivate = true;
 
     layout
     {
@@ -33,13 +34,37 @@ page 50103 "Student Document"
                 {
                     ApplicationArea = All;
                 }
+                field("Average Grade"; "Average Grade")
+                {
+
+                    ApplicationArea = All;
+                }
             }
-            group(LOL)
+            group("Student Grade List")
             {
                 part("Student List"; "Student List")
                 {
-
+                    SubPageLink = "Student Number" = field("Student Number");
                 }
+            }
+        }
+    }
+    actions
+    {
+        area(Navigation)
+        {
+            action("Export Students")
+            {
+                ApplicationArea = All;
+
+                //RunObject = codeunit DisplayMsg.ExportStudentsToCSV();
+                trigger OnAction()
+                var
+                    displaymsg: Codeunit DisplayMsg;
+                begin
+                    displaymsg.ExportStudentsToCSV();
+                end;
+
             }
         }
     }

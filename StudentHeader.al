@@ -1,5 +1,7 @@
 table 50100 "Student Header"
 {
+    LookupPageID = "Student List";
+
     fields
     {
         field(1; Firstname; Text[50])
@@ -12,19 +14,24 @@ table 50100 "Student Header"
         }
         field(3; Education; option)
         {
-            OptionMembers = "Option with ","spaces and ","other symbols!";
+            OptionMembers = "Mathematics","Computer Science","European Studies","Electronics","Innovation and Business";
         }
         field(4; Birthdate; Date)
         {
 
         }
-        field(5; "Student Number"; Text[6])
+        field(5; "Student Number"; Code[10])
         {
 
         }
         field(6; "Phone Number"; Text[20])
         {
 
+        }
+        field(7; "Average Grade"; Decimal)
+        {
+            FieldClass = FlowField;
+            CalcFormula = Average("Student Line".Grade WHERE("Student Number" = Field("Student Number")));
         }
     }
 
@@ -47,8 +54,11 @@ table 50100 "Student Header"
     end;
 
     trigger OnDelete()
+    var
+        StudentLine: Record "Student Line";
     begin
-
+        StudentLine.SetRange(StudentLine."Student Number", "Student Number");
+        StudentLine.DeleteAll();
     end;
 
     trigger OnRename()

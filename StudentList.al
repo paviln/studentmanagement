@@ -2,7 +2,8 @@ page 50101 "Student List"
 {
     PageType = ListPart;
     SourceTable = "Student Line";
-
+    //SourceTableView = WHERE(Student)
+    RefreshOnActivate = true;
     layout
     {
         area(content)
@@ -18,15 +19,7 @@ page 50101 "Student List"
                     ApplicationArea = All;
 
                 }
-                field("Line Number"; "Line Number")
-                {
-                    ApplicationArea = All;
-                }
 
-                field("Student Number"; "Student Number")
-                {
-                    ApplicationArea = All;
-                }
             }
         }
     }

@@ -2,18 +2,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Microsoft cloud sandbox",
+            "name": "Your own server",
             "request": "launch",
             "type": "al",
-            "environmentType": "Sandbox",
-            "environmentName": "sandbox",
+            "environmentType": "OnPrem",
+            "server": "http://localhost",
+            "port": 7049,
+            "serverInstance": "BC170",
+            "authentication": "Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "schemaUpdateMode": "Recreate" 
+            "tenant": "default",
+            "schemaUpdateMode": "Synchronize"
         }
     ]
 }

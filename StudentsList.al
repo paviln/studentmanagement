@@ -1,13 +1,13 @@
-page 50102 "Student Card"
+page 50104 "Students List"
 {
-    PageType = Card;
+    PageType = List;
     SourceTable = "Student Header";
-    RefreshOnActivate = true;
+
     layout
     {
         area(content)
         {
-            group(Reward)
+            repeater(General)
             {
                 field("Firstname"; "Firstname")
                 {
@@ -45,36 +45,7 @@ page 50102 "Student Card"
                     ToolTip = 'Specifies the unique ID of the reward.';
                 }
             }
-
-        }
-
-    }
-    actions
-    {
-        area(Navigation)
-        {
-            action("Open Student")
-            {
-                ApplicationArea = All;
-                RunObject = page "Student Document";
-                RunPageLink = "Student Number" = field("Student Number");
-                ToolTip = 'View all Students';
-            }
-            action("Open Customer")
-            {
-                ApplicationArea = All;
-                RunObject = page "Customer Card";
-                Image = Absence;
-                ShortCutKey = 'Alt+c';
-                ToolTip = 'View Customer Card';
-            }
-
-            action("Display Dialog")
-            {
-
-                RunObject = codeunit DisplayMsg;
-            }
-
         }
     }
+
 }
