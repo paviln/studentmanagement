@@ -57,12 +57,11 @@ page 50103 "Student Document"
             {
                 ApplicationArea = All;
 
-                //RunObject = codeunit DisplayMsg.ExportStudentsToCSV();
                 trigger OnAction()
                 var
-                    displaymsg: Codeunit DisplayMsg;
+                    StudentManagement: Codeunit "Student Management";
                 begin
-                    displaymsg.ExportStudentsToCSV();
+                    StudentManagement.ExportStudentsToCSV();
                 end;
 
             }

@@ -72,7 +72,7 @@ page 50102 "Student Card"
             action("Display Dialog")
             {
 
-                RunObject = codeunit DisplayMsg;
+                RunObject = codeunit "Student Management";
             }
 
         }

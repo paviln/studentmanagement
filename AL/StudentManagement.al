@@ -1,4 +1,4 @@
-codeunit 50113 DisplayMsg
+codeunit 50113 "Student Management"
 {
     trigger OnRun();
     begin
