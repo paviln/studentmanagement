@@ -63,10 +63,10 @@ table 50100 "Student Header"
 
     trigger OnDelete()
     var
-        StudentLine: Record "Student Line";
+        StudentLineRec: Record "Student Line";
     begin
-        StudentLine.SetRange(StudentLine."Student Number", "Student Number");
-        StudentLine.DeleteAll();
+        StudentLineRec.SetRange(StudentLineRec."Student Number", "Student Number");
+        StudentLineRec.DeleteAll();
     end;
 
     trigger OnRename()
