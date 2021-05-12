@@ -28,11 +28,19 @@ table 50100 "Student Header"
         {
 
         }
-        field(7; "Average Grade"; Decimal)
+        field(7; "Average Grade"; Integer)
         {
             FieldClass = FlowField;
             CalcFormula = Average("Student Line".Grade WHERE("Student Number" = Field("Student Number")));
+
+
         }
+        field(8; "Class Designation"; Text[50])
+        {
+
+        }
+
+
     }
 
     keys

@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Console.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Console_StudentWS_GetStudent" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://desktop-eijdi6e:7047/BC170/WS/CRONUS%20Danmark/Codeunit/GetStudent</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

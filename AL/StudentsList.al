@@ -42,7 +42,9 @@ page 50104 "Students List"
                 field("Average Grade"; "Average Grade")
                 {
                     ApplicationArea = All;
+                    Editable = false;
                     ToolTip = 'Specifies the unique ID of the reward.';
+
                 }
             }
         }

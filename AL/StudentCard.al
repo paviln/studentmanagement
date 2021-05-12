@@ -42,6 +42,7 @@ page 50102 "Student Card"
                 field("Average Grade"; "Average Grade")
                 {
                     ApplicationArea = All;
+                    Editable = false;
                     ToolTip = 'Specifies the unique ID of the reward.';
                 }
             }

@@ -36,7 +36,13 @@ page 50103 "Student Document"
                 }
                 field("Average Grade"; "Average Grade")
                 {
+                    Editable = false;
 
+                    ApplicationArea = All;
+
+                }
+                field("Class Designation"; "Class Designation")
+                {
                     ApplicationArea = All;
                 }
             }

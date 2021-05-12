@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/GetStudent" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/GetStudent" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/GetStudent" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="ExportStudentsToCSV">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ExportStudentsToCSV_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetStudent">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="num" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetStudent_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="num" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="ExportStudentsToCSV">
+    <part name="parameters" element="tns:ExportStudentsToCSV" />
+  </message>
+  <message name="ExportStudentsToCSV_Result">
+    <part name="parameters" element="tns:ExportStudentsToCSV_Result" />
+  </message>
+  <message name="GetStudent">
+    <part name="parameters" element="tns:GetStudent" />
+  </message>
+  <message name="GetStudent_Result">
+    <part name="parameters" element="tns:GetStudent_Result" />
+  </message>
+  <portType name="GetStudent_Port">
+    <operation name="ExportStudentsToCSV">
+      <input name="ExportStudentsToCSV" message="tns:ExportStudentsToCSV" />
+      <output name="ExportStudentsToCSV_Result" message="tns:ExportStudentsToCSV_Result" />
+    </operation>
+    <operation name="GetStudent">
+      <input name="GetStudent" message="tns:GetStudent" />
+      <output name="GetStudent_Result" message="tns:GetStudent_Result" />
+    </operation>
+  </portType>
+  <binding name="GetStudent_Binding" type="tns:GetStudent_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="ExportStudentsToCSV">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/GetStudent:ExportStudentsToCSV" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ExportStudentsToCSV">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ExportStudentsToCSV_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetStudent">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/GetStudent:GetStudent" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetStudent">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetStudent_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GetStudent">
+    <port name="GetStudent_Port" binding="tns:GetStudent_Binding">
+      <address location="http://desktop-eijdi6e:7047/BC170/WS/CRONUS%20Danmark/Codeunit/GetStudent" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

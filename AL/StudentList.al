@@ -19,6 +19,11 @@ page 50101 "Student List"
                     ApplicationArea = All;
 
                 }
+                field("Line Number"; "Line Number")
+                {
+                    ApplicationArea = All;
+
+                }
 
             }
         }

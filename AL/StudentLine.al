@@ -7,14 +7,17 @@ table 50102 "Student Line"
         field(1; "Course Name"; Text[50])
         {
         }
-        field(2; "Grade"; Decimal)
+        field(2; "Grade"; Integer)
         {
+
         }
         field(3; "Line Number"; Integer)
         {
+            AutoIncrement = true;
         }
         field(4; "Student Number"; Code[10])
         {
+
         }
     }
     keys
