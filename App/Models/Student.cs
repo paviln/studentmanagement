@@ -22,7 +22,8 @@ namespace WPF.Models
 
         public int AverageGrade { get; set; }
 
-        
+        public string ClassDesignation { get; set; }
+        public List<CourseGrade> CourseGrades = new List<CourseGrade>();
 
     }
 }

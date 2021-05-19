@@ -67,7 +67,7 @@ page 50103 "Student Document"
                 var
                     StudentManagement: Codeunit "Student Management";
                 begin
-                    StudentManagement.ExportStudentsToCSV();
+                    StudentManagement.ExportStudents();
                 end;
 
             }

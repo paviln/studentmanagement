@@ -37,13 +37,24 @@ namespace WPF
             //Specific student number (Primary Key)
             string studentNumber = "1111111111";
 
+            string test = gs.CallGetStudent(num: ref studentNumber);
             //Deserialize JsonObject from Webservice
-            var student = JsonConvert.DeserializeObject<Student>(gs.CallGetStudent(num: ref studentNumber));
-            List<Student> items = new List<Student>
+            var result = JsonConvert.DeserializeObject<Student>(gs.CallGetStudent(num: ref studentNumber));
+            Student studentItem = new Student
             {
-                student
+                FirstName = result.FirstName,
+                LastName = result.LastName,
+                Education = result.Education,
+                Birthdate = result.Birthdate,
+                StudentNumber = result.StudentNumber,
+                PhoneNumber = result.PhoneNumber,
+                AverageGrade = result.AverageGrade,
+                ClassDesignation = result.ClassDesignation
+
             };
-            listview.ItemsSource = items;
+            student.ItemsSource = new List<Student> { studentItem };
+            List<CourseGrade> courseGrades = result.CourseGrades;
+            coursegrade.ItemsSource = courseGrades;
         }
     }
 }
